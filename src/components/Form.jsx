@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FacebookIcon, LinkedinIcon, TwitterIcon, WhatsAppIcon } from "../assets/icons";
 function Form(props) {
   return (
     <section
@@ -10,7 +10,9 @@ function Form(props) {
       <div className="contact-us-bloc flex flex-col md:flex-row">
         <div className="c-contact-us-form | md:w-8/12">
           <div className="relative flex flex-col items-center rounded-xl bg-transparent">
-            <h4 className="block text-xl font-medium text-slate-800">Sign Up</h4>
+            <h4 className="block text-xl font-medium text-slate-800">
+              Sign Up
+            </h4>
             <p className="text-slate-500 font-light">
               Nice to meet you! Enter your details to register.
             </p>
@@ -27,7 +29,9 @@ function Form(props) {
                   />
                 </div>
                 <div className="w-full">
-                  <label className="block mb-2 text-sm text-slate-600">Email</label>
+                  <label className="block mb-2 text-sm text-slate-600">
+                    Email
+                  </label>
                   <input
                     type="email"
                     className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
@@ -36,48 +40,35 @@ function Form(props) {
                 </div>
                 <div className="w-full">
                   <label className="block mb-2 text-sm text-slate-600">
-                    Password
+                    Subject
                   </label>
                   <input
-                    type="password"
+                    type="email"
                     className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-                    placeholder="Your Password"
+                    placeholder="RE: Repsonse"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block mb-2 text-sm text-slate-600">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                    placeholder="Your Phone Number"
                   />
                 </div>
               </div>
-              <div className="inline-flex items-center mt-2">
-                <label
-                  className="flex items-center cursor-pointer relative"
-                  for="check-2"
-                >
-                  <input
-                    type="checkbox"
-                    className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
-                    id="check-2"
-                  />
-                  <span className="absolute text-white opacity-0 pointer-events-none peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
+              <div className="sm:w-full">
+                <label for="message" class=" text-sm/6 font-medium text-black">
+                  Your message
                 </label>
-                <label
-                  className="cursor-pointer ml-2 text-slate-600 text-sm"
-                  for="check-2"
-                >
-                  Remember Me
-                </label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                  placeholder="Write your thoughts here..."
+                ></textarea>
               </div>
               <button
                 className="mt-4 w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
@@ -89,70 +80,48 @@ function Form(props) {
           </div>
         </div>
         <div className="c-contact-us-socials | md:w-4/12">
-        <div className="relative flex w-96 flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
-  <nav className="flex min-w-[240px] flex-col gap-1 p-1.5">
-    <div
-      role="button"
-      className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-    >
-      <div className="mr-4 grid place-items-center">
-        <img
-          alt="candice"
-          src="https://docs.material-tailwind.com/img/face-1.jpg"
-          className="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
-        />
-      </div>
-      <div>
-        <h6 className="text-slate-800 font-medium">
-          Tania Andrew
-        </h6>
-        <p className="text-slate-500 text-sm">
-          Software Engineer @ Material Tailwind
-        </p>
-      </div>
-    </div>
-    <div
-      role="button"
-      className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-    >
-      <div className="mr-4 grid place-items-center">
-        <img
-          alt="alexander"
-          src="https://docs.material-tailwind.com/img/face-2.jpg"
-          className="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
-        />
-      </div>
-      <div>
-        <h6 className="text-slate-800 font-medium">
-          Alexander
-        </h6>
-        <p className="text-slate-500 text-sm">
-          Backend Developer @ Material Tailwind
-        </p>
-      </div>
-    </div>
-    <div
-      role="button"
-      className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-    >
-      <div className="mr-4 grid place-items-center">
-        <img
-          alt="emma"
-          src="https://docs.material-tailwind.com/img/face-3.jpg"
-          className="relative inline-block h-12 w-12 !rounded-full  object-cover object-center"
-        />
-      </div>
-      <div>
-        <h6 className="text-slate-800 font-medium">
-          Emma Willever
-        </h6>
-        <p className="text-slate-500 text-sm">
-          UI/UX Designer @ Material Tailwind
-        </p>
-      </div>
-    </div>
-  </nav>
-</div>
+          <div className="relative flex w-96 flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
+            <nav className="flex min-w-[240px] flex-col gap-1 p-1.5">
+              {/* Linkedin */}
+              <div className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
+                <div className="mr-4 grid place-items-center">
+                  <LinkedinIcon width={32} height={32} />
+                </div>
+                <div>
+                  <p className="text-slate-500 text-sm">Linkedin handle</p>
+                </div>
+              </div>
+              {/* Facebook */}
+              <div className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
+                <div className="mr-4 grid place-items-center">
+                  <FacebookIcon width={32} height={32} />
+                </div>
+                <div>
+                  <p className="text-slate-500 text-sm">Facebook handle</p>
+                </div>
+              </div>
+              {/*  WhatsApp */}
+              <div className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
+                <div className="mr-4 grid place-items-center">
+                  <WhatsAppIcon width={32} height={32} />
+                </div>
+                <div>
+                  <p className="text-slate-500 text-sm">WhatsApp handle</p>
+                </div>
+              </div>
+              {/* Twitter/X  */}
+                    <div  className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100">
+                <div className="mr-4 grid place-items-center">
+                <TwitterIcon width={32} height={32}/>
+                </div>
+                <div>
+                  <p className="text-slate-500 text-sm">
+                   X handle
+                  </p>
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
     </section>
