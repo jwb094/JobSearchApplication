@@ -34,7 +34,7 @@ function Home(props) {
         <h2 className="text-3xl uppercase">Featured</h2>
       </div>
       <section className="c-featured-jobs | | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
-        <div className="flex flex-col md:flex-row gap-x-6">
+        <div className="flex flex-col md:flex-row justify-between gap-x-6">
           {featuredJobCard}
         </div>
       </section>
