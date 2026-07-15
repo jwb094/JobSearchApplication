@@ -1,25 +1,29 @@
 import React from "react";
-
+import ApplyCard from "../components/ApplyButton"
+import { CompanyIcon, JobTypeIcon, LocationIcon, SalaryIcon } from "../assets/icons";
 function JobCard(props) {
-  return (
-    <section data-template="JobCard" data-view="default" classNameName="c-job-card">
-      <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg md:w-96">
-        <div className="p-4">
-          <h5 className="mb-2 text-slate-800 text-xl font-semibold">
-            Website Review Check Update from Our Team in San Francisco
-          </h5>
-          <p className="text-slate-600 leading-normal font-light">
-            The place is close to Barceloneta Beach and bus stop just 2 min by
-            walk and near to Naviglio where you can enjoy the main night life in
-            Barcelona.
-          </p>
 
-          <button
-            className="rounded-md bg-slate-800 py-2 px-4 mt-6 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"
-          >
-            Read more
-          </button>
+
+  return (
+    <section data-template="JobCard" data-view="default" className="c-job-card w-full" >
+      <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full">
+        <div className="p-4 flex flex-col gap-y-3">
+          <h5 className="mb-2 text-slate-800 text-xl font-semibold">
+            Job Title
+          </h5>
+               <p className="text-slate-600 leading-normal font-light flex gap-x-5">
+            <CompanyIcon width={24} height={24}/> Company
+          </p>
+             <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
+            <JobTypeIcon width={24} height={24}/>  Job Type
+          </p>
+          <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
+             <LocationIcon width={24} height={24}/> Location
+          </p>
+             <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
+             <SalaryIcon width={24} height={24}/> Salary - Salary
+          </p>
+          <ApplyCard/>
         </div>
       </div>
     </section>
