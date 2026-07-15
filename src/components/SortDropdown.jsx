@@ -7,9 +7,9 @@ function SortDropdown(props) {
       data-view="default"
       className="c-sort-dropdown | py-12"
     >
-      <div class="w-full max-w-sm min-w-[200px]">
-        <div class="relative">
-          <select class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+      <div className="w-full max-w-sm min-w-[200px]">
+        <div className="relative">
+          <select className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
             <option value="brazil">Published - Desc</option>
             <option value="bucharest">Published - ASc</option>
             <option value="london">Alp - A- Z</option>
@@ -21,7 +21,7 @@ function SortDropdown(props) {
             viewBox="0 0 24 24"
             stroke-width="1.2"
             stroke="currentColor"
-            class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700"
+            className="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700"
           >
             <path
               stroke-linecap="round"
