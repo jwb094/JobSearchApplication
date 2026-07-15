@@ -1,33 +1,27 @@
-import { useState } from "react";
-import ApplyButton from "./components/ApplyButton";
-import Breadcrumb from "./components/Breadcrumb";
-import ErrorAlert from "./components/ErrorAlert";
-import Filters from "./components/Filters";
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import Header from "./components/Header";
-import JobCard from "./components/JobCard";
-import Pagination from "./components/Pagination";
-import SearchBar from "./components/SearchBar";
-import SortDropdown from "./components/SortDropdown";
-import SummaryCard from "./components/SummaryCard";
-import "./App.css";
+import  React  from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
+import "./App.css";
+import Default from "./components/layouts/Default";
+import Home from "./pages/Home";
+import ContactUs from "./pages/ContactUs";
+import Job from "./pages/Job";
+import SearchPage from "./pages/SearchPage";
+import PageNotFound from "./pages/PageNotFound";
+import About from "./pages/About";
 function App() {
   return (
     <>
-      <Header/>
-      <ApplyButton />
-      <Breadcrumb />
-      <ErrorAlert />
-      <Filters />
-      <Form />
-      <JobCard />
-      <Pagination />
-      <SearchBar />
-      <SortDropdown />
-      <SummaryCard />
-      <Footer/>
+    <Routes>
+      <Route path="/" element={<Default/>}>
+        <Route index element={<Home />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/job/:id/:slug" element={<Job />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="*" element={<About />} /> 
+        <Route path="*" element={<PageNotFound />} /> 
+         </Route>
+      </Routes>
     </>
   );
 }
