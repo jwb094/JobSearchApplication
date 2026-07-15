@@ -18,7 +18,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/job/:id/:slug" element={<Job />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="*" element={<About />} /> 
+        <Route path="/about" element={<About />} /> 
         <Route path="*" element={<PageNotFound />} /> 
          </Route>
       </Routes>
