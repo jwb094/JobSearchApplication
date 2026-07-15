@@ -6,7 +6,6 @@ import Filters from "./components/Filters";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Header from "./components/Header";
-import InformationCard from "./components/InformationCard";
 import JobCard from "./components/JobCard";
 import Pagination from "./components/Pagination";
 import SearchBar from "./components/SearchBar";
@@ -23,7 +22,6 @@ function App() {
       <ErrorAlert />
       <Filters />
       <Form />
-      <InformationCard />
       <JobCard />
       <Pagination />
       <SearchBar />
