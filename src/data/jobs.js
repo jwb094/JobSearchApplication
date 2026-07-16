@@ -1,7 +1,7 @@
 export const jobs = [
 
 {
-id: 1,
+id:1,
 title: "Senior React Developer",
 slug: "senior-react-developer-london",
 
@@ -64,7 +64,7 @@ additional_info:
 
 
 {
-id: 2,
+id:2,
 title: "Frontend Developer",
 slug: "frontend-developer-manchester",
 
@@ -124,7 +124,7 @@ additional_info:null
 
 
 {
-id: 3,
+id:3,
 title:"PHP Laravel Developer",
 
 slug:"php-laravel-developer-reading",
@@ -302,7 +302,7 @@ additional_info:
 
 },
 {
-id: 6,
+id:6,
 title:"DevOps Engineer",
 
 slug:"devops-engineer-reading",
@@ -900,7 +900,7 @@ benefits:[
 
 additional_info:
 "Qualified electricians only."
-}
+},
 {
 id:16,
 
@@ -1522,5 +1522,592 @@ benefits:[
 
 additional_info:
 "Previous experience working with children preferred."
+},
+{
+id:26,
+
+title:"Backend Developer",
+
+slug:"backend-developer-london",
+
+category_id:3,
+
+company_id:2,
+
+location_id:1,
+
+featured:false,
+
+salary_min:50000,
+
+salary_max:65000,
+
+job_type:"full-time",
+
+experience:"Mid-Level",
+
+posted_date:"2026-07-15",
+
+description:
+"Nexa Digital is looking for a Backend Developer to design and maintain reliable server-side applications powering modern digital products.",
+
+responsibilities:[
+"Develop backend services and APIs",
+"Design database solutions",
+"Write clean maintainable code",
+"Improve application performance",
+"Collaborate with frontend developers"
+],
+
+essential_skills:[
+"PHP",
+"Laravel",
+"MySQL",
+"REST APIs",
+"Git"
+],
+
+desirable_skills:[
+"Docker",
+"AWS",
+"Node.js",
+"Testing Frameworks"
+],
+
+benefits:[
+"Hybrid working",
+"Private healthcare",
+"Learning budget",
+"Annual bonus"
+],
+
+additional_info:
+"Experience building commercial web applications preferred."
+},
+
+
+{
+id:27,
+
+title:"WordPress Developer",
+
+slug:"wordpress-developer-manchester",
+
+category_id:3,
+
+company_id:3,
+
+location_id:7,
+
+featured:true,
+
+salary_min:35000,
+
+salary_max:48000,
+
+job_type:"full-time",
+
+experience:"Mid-Level",
+
+posted_date:"2026-07-14",
+
+description:
+"BrightPixel Studio requires a WordPress Developer to create custom themes and plugins for client websites.",
+
+responsibilities:[
+"Develop custom WordPress themes",
+"Build reusable components",
+"Maintain existing websites",
+"Optimise website performance",
+"Work with designers"
+],
+
+essential_skills:[
+"WordPress",
+"PHP",
+"JavaScript",
+"HTML",
+"CSS"
+],
+
+desirable_skills:[
+"Gutenberg Blocks",
+"ACF",
+"WooCommerce",
+"MySQL"
+],
+
+benefits:[
+"Flexible working",
+"Creative environment",
+"Training budget",
+"Company events"
+],
+
+additional_info:null
+},
+
+
+{
+id:28,
+
+title:"IT Support Technician",
+
+slug:"it-support-technician-reading",
+
+category_id:4,
+
+company_id:4,
+
+location_id:10,
+
+featured:false,
+
+salary_min:30000,
+
+salary_max:38000,
+
+job_type:"full-time",
+
+experience:"Junior",
+
+posted_date:"2026-07-13",
+
+description:
+"CloudForge Ltd is seeking an IT Support Technician to assist employees with hardware and software issues.",
+
+responsibilities:[
+"Provide technical support",
+"Resolve hardware problems",
+"Manage user accounts",
+"Install software",
+"Document technical issues"
+],
+
+essential_skills:[
+"Windows Support",
+"Networking",
+"Troubleshooting",
+"Customer Service"
+],
+
+desirable_skills:[
+"Microsoft 365",
+"Linux",
+"Active Directory"
+],
+
+benefits:[
+"Training certifications",
+"Pension scheme",
+"Career progression"
+],
+
+additional_info:
+"Entry-level candidates welcome."
+},
+
+
+{
+id:29,
+
+title:"Data Analyst",
+
+slug:"data-analyst-london",
+
+category_id:1,
+
+company_id:2,
+
+location_id:2,
+
+featured:false,
+
+salary_min:42000,
+
+salary_max:55000,
+
+job_type:"full-time",
+
+experience:"Mid-Level",
+
+posted_date:"2026-07-12",
+
+description:
+"Nexa Digital is hiring a Data Analyst to transform business data into meaningful insights.",
+
+responsibilities:[
+"Analyse business datasets",
+"Create reports and dashboards",
+"Identify trends",
+"Present findings",
+"Improve data quality"
+],
+
+essential_skills:[
+"SQL",
+"Excel",
+"Data Analysis",
+"Reporting"
+],
+
+desirable_skills:[
+"Python",
+"Power BI",
+"Tableau"
+],
+
+benefits:[
+"Hybrid working",
+"Training allowance",
+"Healthcare"
+],
+
+additional_info:null
+},
+
+
+{
+id:30,
+
+title:"UI Designer",
+
+slug:"ui-designer-manchester",
+
+category_id:5,
+
+company_id:3,
+
+location_id:7,
+
+featured:false,
+
+salary_min:38000,
+
+salary_max:50000,
+
+job_type:"contract",
+
+experience:"Mid-Level",
+
+posted_date:"2026-07-11",
+
+description:
+"BrightPixel Studio is looking for a UI Designer to create visually engaging digital experiences.",
+
+responsibilities:[
+"Design user interfaces",
+"Create design systems",
+"Produce prototypes",
+"Collaborate with developers",
+"Improve user experiences"
+],
+
+essential_skills:[
+"Figma",
+"UI Design",
+"Prototyping",
+"Design Systems"
+],
+
+desirable_skills:[
+"HTML",
+"CSS",
+"UX Research"
+],
+
+benefits:[
+"Flexible contract",
+"Creative projects",
+"Remote options"
+],
+
+additional_info:
+"Six month contract."
+},
+
+
+{
+id:31,
+
+title:"Bar Manager",
+
+slug:"bar-manager-london",
+
+category_id:2,
+
+company_id:5,
+
+location_id:3,
+
+featured:true,
+
+salary_min:35000,
+
+salary_max:45000,
+
+job_type:"full-time",
+
+experience:"Senior",
+
+posted_date:"2026-07-10",
+
+description:
+"Elite Hospitality Group is seeking an experienced Bar Manager to lead operations within a busy London venue.",
+
+responsibilities:[
+"Manage bar operations",
+"Train bar staff",
+"Control stock levels",
+"Create staff schedules",
+"Maintain service standards"
+],
+
+essential_skills:[
+"Leadership",
+"Hospitality Management",
+"Customer Service",
+"Stock Control"
+],
+
+desirable_skills:[
+"Mixology",
+"Food Safety",
+"Budget Management"
+],
+
+benefits:[
+"Staff discounts",
+"Bonus scheme",
+"Career progression"
+],
+
+additional_info:
+"Evening availability required."
+},
+
+
+{
+id:32,
+
+title:"Kitchen Porter",
+
+slug:"kitchen-porter-brighton",
+
+category_id:2,
+
+company_id:6,
+
+location_id:11,
+
+featured:false,
+
+salary_min:24000,
+
+salary_max:28000,
+
+job_type:"part-time",
+
+experience:"Entry-Level / Associate",
+
+posted_date:"2026-07-09",
+
+description:
+"Fresh Bites Restaurants requires a Kitchen Porter to support chefs and maintain kitchen cleanliness.",
+
+responsibilities:[
+"Clean kitchen equipment",
+"Support chefs",
+"Prepare ingredients",
+"Manage waste disposal",
+"Maintain hygiene standards"
+],
+
+essential_skills:[
+"Teamwork",
+"Reliability",
+"Organisation"
+],
+
+desirable_skills:[
+"Kitchen Experience",
+"Food Safety"
+],
+
+benefits:[
+"Staff meals",
+"Flexible shifts",
+"Training provided"
+],
+
+additional_info:null
+},
+
+{
+id:33,
+
+title:"Restaurant Manager",
+
+slug:"restaurant-manager-brighton",
+
+category_id:2,
+
+company_id:6,
+
+location_id:11,
+
+featured:true,
+
+salary_min:42000,
+
+salary_max:52000,
+
+job_type:"full-time",
+
+experience:"Senior",
+
+posted_date:"2026-07-08",
+
+description:
+"Fresh Bites Restaurants is recruiting a Restaurant Manager to oversee daily operations and customer experience.",
+
+responsibilities:[
+"Manage restaurant operations",
+"Lead hospitality teams",
+"Monitor budgets",
+"Improve customer satisfaction",
+"Manage suppliers"
+],
+
+essential_skills:[
+"Leadership",
+"Hospitality Management",
+"Customer Service",
+"Operations Management"
+],
+
+desirable_skills:[
+"Budget Management",
+"Training Experience"
+],
+
+benefits:[
+"Performance bonus",
+"Staff discounts",
+"Career development"
+],
+
+additional_info:null
+},
+{
+id:34,
+
+title:"Housekeeper",
+
+slug:"housekeeper-london",
+
+category_id:2,
+
+company_id:5,
+
+location_id:6,
+
+featured:false,
+
+salary_min:25000,
+
+salary_max:30000,
+
+job_type:"full-time",
+
+experience:"Entry-Level / Associate",
+
+posted_date:"2026-07-07",
+
+description:
+"Elite Hospitality Group requires Housekeepers to maintain high standards across hotel accommodation.",
+
+responsibilities:[
+"Clean guest rooms",
+"Maintain hygiene standards",
+"Report maintenance issues",
+"Replace supplies",
+"Follow cleaning procedures"
+],
+
+essential_skills:[
+"Attention to Detail",
+"Reliability",
+"Time Management"
+],
+
+desirable_skills:[
+"Hotel Experience",
+"Cleaning Experience"
+],
+
+benefits:[
+"Staff discounts",
+"Training",
+"Flexible shifts"
+],
+
+additional_info:null
+},
+{
+id:35,
+
+title:"Delivery Driver",
+
+slug:"delivery-driver-manchester",
+
+category_id:14,
+
+company_id:9,
+
+location_id:8,
+
+featured:true,
+
+salary_min:28000,
+
+salary_max:36000,
+
+job_type:"full-time",
+
+experience:"Junior",
+
+posted_date:"2026-07-06",
+
+description:
+"Prime Logistics is hiring delivery drivers to support nationwide delivery operations.",
+
+responsibilities:[
+"Deliver customer orders",
+"Complete delivery paperwork",
+"Maintain vehicle standards",
+"Provide customer service",
+"Follow delivery schedules"
+],
+
+essential_skills:[
+"Driving Licence",
+"Time Management",
+"Customer Service"
+],
+
+desirable_skills:[
+"Commercial Driving Experience",
+"Route Planning"
+],
+
+benefits:[
+"Overtime available",
+"Company vehicle",
+"Pension scheme"
+],
+
+additional_info:
+"Clean driving licence required."
 }
 ];
