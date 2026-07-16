@@ -19,11 +19,10 @@ function CategoryPage(props) {
   }
   return (
     <>
-      <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
-        <h2 className="text-3xl">Search</h2>
+      <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl | text-center">
+        <h2 className="text-3xl">Hosptality Job</h2>
         <p>
-          Find your next opportunity with powerful search filters to discover
-          jobs matching your skills, experience and career goals.
+     Find chef, restaurant and hotel roles
         </p>
       </div>
       {/* popular */}
