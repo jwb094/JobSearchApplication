@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import JobCard from "../components/JobCard";
 import Card from "../components/Card";
+import { useNavigate } from "react-router";
+
+import {
+  recentFearturedJobs,
+  mostRecentJobs,
+  getRandomCategories,
+} from "../utils/dataset_functions";
 function Home(props) {
-  const featuredJobCard = [];
-  const popularCatgeroiesCards = [];
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  for (let index = 0; index <= 2; index++) {
-    featuredJobCard.push(<JobCard />);
-  }
+  const handleSearchSumbit = (event) => {
+    event.preventDefault();
+    setLoading(true);
 
-  for (let i = 0; i <= 5; i++) {
-    popularCatgeroiesCards.push(<Card />);
-  }
+    setTimeout(() => {
+      navigate("/search" + "?" + searchTerm);
+
+      setLoading(false);
+    }, 2000);
+  };
 
   return (
     <>
@@ -27,7 +38,12 @@ function Home(props) {
       </div>
 
       {/* Search Bar */}
-      <SearchBar />
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        search={handleSearchSumbit}
+        isLoading={loading}
+      />
 
       {/* Featured Job */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-12">
@@ -35,7 +51,9 @@ function Home(props) {
       </div>
       <section className="c-featured-jobs | | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between gap-x-6">
-          {featuredJobCard}
+          {recentFearturedJobs.map((recentFearturedJob) => (
+            <JobCard key={recentFearturedJob.id} job={recentFearturedJob} />
+          ))}
         </div>
       </section>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-12">
@@ -44,7 +62,9 @@ function Home(props) {
       {/* Browse Job By Catgeories  */}
       <section className="c-featured-jobs-categories | | mx-auto px-4 py-16 sm:px-6  |  max-w-7xl">
         <div className="flex flex-col md:flex-row flex-wrap gap-x-8">
-          {popularCatgeroiesCards}
+          {getRandomCategories.map((category) => (
+            <Card key={category.id} content={category} />
+          ))}
         </div>
       </section>
     </>

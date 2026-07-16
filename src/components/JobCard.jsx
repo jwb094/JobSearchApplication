@@ -9,21 +9,22 @@ function JobCard(props) {
       <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full">
         <div className="p-4 flex flex-col gap-y-3">
           <h5 className="mb-2 text-slate-800 text-xl font-semibold">
-            Job Title
+            {props.job.title}
           </h5>
                <p className="text-slate-600 leading-normal font-light flex gap-x-5">
-            <CompanyIcon width={24} height={24}/> Company
+            <CompanyIcon width={24} height={24}/>    {props.job.company_name}
           </p>
              <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
-            <JobTypeIcon width={24} height={24}/>  Job Type
+            <JobTypeIcon width={24} height={24}/> {props.job.job_type}
           </p>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
-             <LocationIcon width={24} height={24}/> Location
+             <LocationIcon width={24} height={24}/> {props.job.location ?? "Undisclosed Currently"}
           </p>
              <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
-             <SalaryIcon width={24} height={24}/> Salary - Salary
+             <SalaryIcon width={24} height={24}/> {props.job.salary_min} - £{props.job.salary_max}
+            
           </p>
-          <ApplyCard/>
+          <ApplyCard link={props.job.url} />
         </div>
       </div>
     </section>

@@ -3,13 +3,13 @@ import React from "react";
 function Card(props) {
   return (
     <a
-      href="#"
+      href={props.content.url}
       className="text-slate-800 font-semibold text-sm hover:underline flex items-center"
     >
       <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg  p-6 w-full md:w-96">
         <div className="flex items-center mb-4">
           <h5 className=" text-slate-800 text-xl font-semibold">
-            Website Review Check
+            {props.content.title}
           </h5>
         </div>
         <span className="flex flex-row">
