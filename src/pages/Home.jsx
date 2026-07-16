@@ -16,7 +16,7 @@ function Home(props) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
+      <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl | text-center">
         <h2 className="text-3xl">Find Your Next Job Here</h2>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
