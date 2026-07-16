@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar";
 import Filters from "../components/Filters";
 import Pagaination from "../components/Pagination";
 import JobCard from "../components/JobCard";
+import SortDropdown from "../components/SortDropdown"
 function SearchPage(props) {
   const searchReultsJobCard = [];
   for (let index = 0; index <= 8; index++) {
@@ -27,7 +28,10 @@ function SearchPage(props) {
             <Filters />
           </div>
           {/* Search Results  */}
-          <div className="flex flex-col md:w-3/4">{searchReultsJobCard}</div>
+          <div className="flex flex-col md:w-3/4">
+          <SortDropdown />
+          {searchReultsJobCard}
+          </div>
         </div>
         <Pagaination />
       </section>
