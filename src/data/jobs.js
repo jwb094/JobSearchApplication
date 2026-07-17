@@ -13,7 +13,7 @@ featured: true,
 salary_min: 65000,
 salary_max: 80000,
 
-location: "London",
+location_id:1,
 postcode: "WC1V 6EA",
 
 job_type: "full-time",
@@ -76,7 +76,7 @@ featured: false,
 salary_min: 40000,
 salary_max: 55000,
 
-location: "Manchester",
+location_id: 7,
 postcode: "M1 1AE",
 
 job_type: "full-time",
@@ -137,7 +137,7 @@ featured:false,
 salary_min:45000,
 salary_max:60000,
 
-location:"Reading",
+location_id:10,
 postcode:"RG1 1LZ",
 
 job_type:"remote",
@@ -199,7 +199,7 @@ featured:true,
 salary_min:28000,
 salary_max:35000,
 
-location:"London",
+location_id:1,
 postcode:"EC2A 4NE",
 
 job_type:"full-time",
@@ -259,7 +259,7 @@ featured:false,
 salary_min:38000,
 salary_max:50000,
 
-location:"Manchester",
+location_id:7,
 postcode:"M1 1AE",
 
 job_type:"contract",
@@ -315,7 +315,7 @@ featured:false,
 salary_min:55000,
 salary_max:70000,
 
-location:"Reading",
+location_id:10,
 postcode:"RG1 1LZ",
 
 job_type:"full-time",
@@ -376,7 +376,7 @@ featured:true,
 salary_min:24000,
 salary_max:28000,
 
-location:"London",
+location_id:1,
 postcode:"W1D 3QF",
 
 job_type:"full-time",
@@ -435,7 +435,7 @@ featured:true,
 salary_min:32000,
 salary_max:40000,
 
-location:"Brighton",
+location_id:11,
 postcode:"BN1 1EE",
 
 job_type:"full-time",
@@ -494,7 +494,7 @@ featured:false,
 salary_min:28000,
 salary_max:34000,
 
-location:"Brighton",
+location_id:11,
 postcode:"BN1 1EE",
 
 job_type:"full-time",
@@ -553,7 +553,7 @@ featured:false,
 salary_min:26000,
 salary_max:32000,
 
-location:"London",
+location_id:1,
 postcode:"W1D 3QF",
 
 job_type:"part-time",
@@ -613,7 +613,7 @@ salary_min:24000,
 
 salary_max:28000,
 
-location:"Croydon",
+location_id:12,
 
 postcode:"CR0 1EA",
 
@@ -675,7 +675,7 @@ salary_min:30000,
 
 salary_max:36000,
 
-location:"London",
+location_id:1,
 
 postcode:"CR0 1EA",
 
@@ -736,7 +736,7 @@ salary_min:26000,
 
 salary_max:32000,
 
-location:"Guildford",
+location_id:16,
 
 postcode:"GU1 1AA",
 
@@ -798,7 +798,7 @@ salary_min:28000,
 
 salary_max:35000,
 
-location:"Birmingham",
+location_id:9,
 
 postcode:"B1 1TB",
 
@@ -859,7 +859,7 @@ salary_min:38000,
 
 salary_max:50000,
 
-location:"Birmingham",
+location_id:9,
 
 postcode:"B1 1TB",
 
@@ -918,7 +918,7 @@ salary_min:27000,
 
 salary_max:34000,
 
-location:"Leeds",
+location_id:13,
 
 postcode:"LS1 4AP",
 
@@ -981,7 +981,7 @@ salary_min:24000,
 
 salary_max:29000,
 
-location:"London",
+location_id:1,
 
 postcode:"SW1A 2AA",
 
@@ -1044,7 +1044,7 @@ salary_min:32000,
 
 salary_max:40000,
 
-location:"London",
+location_id:1,
 
 postcode:"SW1A 2AA",
 
@@ -1106,7 +1106,7 @@ salary_min:35000,
 
 salary_max:45000,
 
-location:"Bristol",
+location_id:15,
 
 postcode:"BS1 6QF",
 
@@ -1169,7 +1169,7 @@ salary_min:38000,
 
 salary_max:52000,
 
-location:"Bristol",
+location_id:15,
 
 postcode:"BS1 6QF",
 
@@ -1232,7 +1232,7 @@ salary_min:28000,
 
 salary_max:36000,
 
-location:"London",
+location_id:1,
 
 postcode:"EC2A 4NE",
 
@@ -1294,7 +1294,7 @@ salary_min:25000,
 
 salary_max:32000,
 
-location:"Nottingham",
+location_id:17,
 
 postcode:"NG1 2AS",
 
@@ -1355,7 +1355,7 @@ salary_min:26000,
 
 salary_max:34000,
 
-location:"Manchester",
+location_id:7,
 
 postcode:"M50 3SP",
 
@@ -1417,7 +1417,7 @@ salary_min:28000,
 
 salary_max:36000,
 
-location:"London",
+location_id:1,
 
 postcode:"E14 5AB",
 
@@ -1479,7 +1479,7 @@ salary_min:26000,
 
 salary_max:33000,
 
-location:"Cambridge",
+location_id:14,
 
 postcode:"CB4 0WS",
 
