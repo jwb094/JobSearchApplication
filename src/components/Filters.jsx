@@ -22,7 +22,7 @@ function Filters(props) {
 
         <FilterSection filterCategory={"experience"} title={"Experience"} options={experience} />
 
-        <FilterSection filterCategory={"location"} title={"Locations"} options={getJoblocations} />
+        <FilterSection filterCategory={"location"} title={"Locations"} options={getJoblocations} classStyle={"overflow-auto h-96"}/>
 
         <FilterSection filterCategory={"salaries"} title={"Salaries"} options={salaries} />
 
