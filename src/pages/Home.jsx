@@ -19,7 +19,7 @@ function Home(props) {
     setLoading(true);
 
     setTimeout(() => {
-      navigate("/search" + "?" + searchTerm);
+      navigate("/search" + "?query=" + searchTerm);
 
       setLoading(false);
     }, 2000);
