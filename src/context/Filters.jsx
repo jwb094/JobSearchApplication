@@ -10,28 +10,61 @@ export function FiltersProvider({ children }) {
     location: [],
   });
 
+  const initialFilters = {
+  jobType: [],
+  salaries: [],
+  experience: [],
+  location: [],
+};
+
+  //const [filterSearchParams, setFilterSearchParams] = useState("");
+
+  // function updateFiltersParams(filters) {
+
+  //   let filterURL = "";
+  //   if (filters.jobType.length > 0) {
+  //     filterURL = filterURL.concat("?JobType=" + filters.jobType.join(","));
+  //   }
+  //   if (filters.salaries.length > 0) {
+  //     filterURL = filterURL.concat("?salary_min=" + filters.salaries.join(","));
+  //   }
+  //   if (filters.experience.length > 0) {
+  //     filterURL = filterURL.concat(
+  //       "?experience=" + filters.experience.join(","),
+  //     );
+  //   }
+  //   if (filters.location.length > 0) {
+  //     filterURL = filterURL.concat("?location=" + filters.location.join(","));
+  //   }
+  //   setFilterSearchParams(filterURL);
+  //   return filterURL;
+  // }
+
+    const resetFilters = () => {
+      setFilters(initialFilters);
+
+
+    };
   const handleCheckboxChange = (category, value) => {
-    console.log(category);
-    console.log(value);
-
     setFilters((previous) => {
-          const exists = previous[category].includes(value);
+      const exists = previous[category].includes(value);
 
-          return {
-              ...previous,
-              [category]: exists
-                  ? previous[category].filter(item => item !== value)
-                  : [...previous[category], value]
-          };
+      return {
+        ...previous,
+        [category]: exists
+          ? previous[category].filter((item) => item !== value)
+          : [...previous[category], value],
+      };
     });
   };
-  console.log(filters);
+
   return (
     <FiltersContext.Provider
       value={{
         filters,
         setFilters,
         handleCheckboxChange,
+        resetFilters,
       }}
     >
       {children}
