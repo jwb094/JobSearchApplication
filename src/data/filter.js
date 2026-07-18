@@ -6,10 +6,10 @@ export const jobTypes = [
 ];
 
 export const experience = [
-  { id: "entry-level", label: "Entry-Level / Associate" },
-  { id: "junior", label: "Junior" },
-  { id: "mid-level", label: "Mid-Level" },
-  { id: "senior", label: "Senior" },
+  { id: "Entry-Level / Associate", label: "Entry-Level / Associate" },
+  { id: "Junior", label: "Junior" },
+  { id: "Mid-Level", label: "Mid-Level" },
+  { id: "Senior", label: "Senior" },
 ];
 
 export const locations = [
@@ -20,9 +20,9 @@ export const locations = [
 ];
 
 export const salaries = [
-  { id: "20k-30k", label: "£20,000–£30,000" },
-  { id: "30k-40k", label: "£30,000–£40,000" },
-  { id: "40k-50k", label: "£40,000–£50,000" },
-  { id: "50k-60k", label: "£50,000–£60,000" },
-  { id: "60k-plus", label: "£60,000+" },
+  { id: 20000, label: "£20,000" },
+  { id: 30000, label: "£30,000" },
+  { id: 40000, label: "£40,000" },
+  { id: 50000, label: "£50,000" },
+  { id: 60000, label: "£60,000" },
 ];
