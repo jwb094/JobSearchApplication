@@ -12,10 +12,10 @@ function SortDropdown(props) {
           <select  
           onChange={props.sortList}
           className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-            <option value="publish-desc">Published - Desc</option>
-            <option value="publish-asc">Published - ASc</option>
-            <option value="A-Z">Alp - A- Z</option>
-            <option value="Z-A">Alp - Z - A</option>
+            <option value="oldest">Oldest</option>
+            <option value="newest">Newest</option>
+            <option value="az">A- Z</option>
+            <option value="za">Z - A</option>
           </select>
           <svg
             xmlns="http://www.w3.org/2000/svg"
