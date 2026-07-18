@@ -7,7 +7,7 @@ function ApplyButton(props) {
       type="button"
       href={props.link}
     >
-      CTA Text
+      {props.title}
     </a>
   );
 }
