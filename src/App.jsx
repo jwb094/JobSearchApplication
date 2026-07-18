@@ -18,7 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/job/category/:category_slug" element={<CategoryPage />} />
-          <Route path="/job/:id/:slug" element={<Job />} />
+          <Route path="/job/:job_id/:job_slug" element={<Job />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<PageNotFound />} />
