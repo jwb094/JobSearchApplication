@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import FilterSection from "./Filters/FilterSection";
 import { jobTypes, experience, locations, salaries } from "../data/filter";
 import { HambugerIcon,ClosedIcon } from "../assets/icons";
+import { getJoblocations } from "../utils/dataset_functions";
 function Filters(props) {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section
       data-template="filters"
@@ -16,13 +18,13 @@ function Filters(props) {
         Filters
       </button>
       <div className={isOpen ? "block" : "hidden md:block"}>
-        <FilterSection title={"Job Type"} options={jobTypes} />
+        <FilterSection filterCategory={"jobType"} title={"Job Type"} options={jobTypes} />
 
-        <FilterSection title={"Experience"} options={experience} />
+        <FilterSection filterCategory={"experience"} title={"Experience"} options={experience} />
 
-        <FilterSection title={"Locations"} options={locations} />
+        <FilterSection filterCategory={"location"} title={"Locations"} options={getJoblocations} />
 
-        <FilterSection title={"Salaries"} options={salaries} />
+        <FilterSection filterCategory={"salaries"} title={"Salaries"} options={salaries} />
 
         <button
           class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
