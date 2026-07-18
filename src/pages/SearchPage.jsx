@@ -14,9 +14,11 @@ import SearchLoading from "../components/SearchLoading";
 import { useSearchParams } from "react-router";
 import {
   contentPagination,
-  getJobs,
+  //getJobs,
   SearchJobDB,
   getJobDescsRandomise,
+  sortJobs,
+  filterJobs,
 } from "../utils/dataset_functions";
 
 import { useFilterContext } from "../context/Filters";
@@ -26,7 +28,8 @@ function SearchPage(props) {
   const [sort, setSort] = useState("");
   const [loading, setLoading] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const [paginationData, setPaginationData] = useState(getJobDescsRandomise);
+  //const [paginationData, setPaginationData] = useState(getJobDescsRandomise);
+  const paginationData = getJobDescsRandomise;
   const [searchContentData, setSearchContent] = useState([]);
 
   const [page, setPage] = useState(1);
@@ -34,8 +37,9 @@ function SearchPage(props) {
   const limit = 9;
   const { filters, updateFiltersParams, filterSearchParams } = useFilterContext();
   const [searchFiltersParams, setSearchFiltersParams] = useState("");
-  const[filters_search_params,setFilterSearchParams] = useState(filterSearchParams);
- // console.log(updateFiltersParams(filters));
+  const [filters_search_params, setFilterSearchParams] =
+    useState(filterSearchParams);
+  // console.log(updateFiltersParams(filters));
   // const fsp = updateFiltersParams(filters);
   useEffect(() => {
     //If redirect from home page
@@ -63,7 +67,7 @@ function SearchPage(props) {
         setPaginationData(result);
         setPage(1);
       });
-      const url = updateURL(searchTerm, page, sort, filters);
+      const url = updateURL(searchTerm, page, sort);
       window.history.pushState({}, "", url);
       setLoading(false);
     }, 3000);
@@ -79,33 +83,35 @@ function SearchPage(props) {
     if (sortOrder.trim() !== "") {
       searchURL = searchURL.concat("?sort=" + sortOrder);
     }
-    
-    // searchURL = searchURL.concat(updateFiltersParams(filters));
-    // console.log(searchURL);
 
-     return searchURL;
+    return searchURL;
   }
   const sortList = (event) => {
     const value = event.target.value;
     setSort(value);
 
-  const url = updateURL(searchTerm, page, value, );
-  window.history.pushState({}, "", url);
+    const url = updateURL(searchTerm, page, value);
+    window.history.pushState({}, "", url);
   };
 
-  const jobsToDisplay = useMemo(
-    () => getJobs(page, limit, paginationData, sort, filters),
-    [page, paginationData, sort, filters],
-  );
+  const jobsSortedAndFiltered =
+      useMemo(() =>{
+      return sortJobs(
+        filterJobs(paginationData,filters)
+        ,sort);
+  },[filters,sort])
 
-  const dataForPagination = contentPagination(page, limit, paginationData);
+   const paginationLogic = useMemo(() => contentPagination(page, limit, jobsSortedAndFiltered),
+   [jobsSortedAndFiltered,page]);
+
+ const jobsToDisplay = useMemo(() => jobsSortedAndFiltered.slice((page - 1) * limit, page * limit))
+
 
   function handlePageChange(value) {
     setPage(value);
 
-   const url = updateURL(searchTerm, value, sort);
-       //const url = updateURL();   
-   window.history.pushState({}, "", url);
+    const url = updateURL(searchTerm, value, sort);
+    window.history.pushState({}, "", url);
   }
 
   return (
@@ -133,7 +139,7 @@ function SearchPage(props) {
           {/* Search Results  */}
           <div className="flex flex-col md:w-3/4">
             <SortDropdown sortList={sortList} />
-            {loading || isPending ? (
+             {loading || isPending ? (
               <>
                 <SearchLoading />
               </>
@@ -149,16 +155,16 @@ function SearchPage(props) {
               </div>
             ) : (
               <>
-                {jobsToDisplay.map((job) => (
-                  <JobCard job={job} />
-                ))}
-                <Pagination
-                  totalPages={dataForPagination.totalPages}
-                  page={dataForPagination.currentPage}
-                  onPageChange={handlePageChange}
-                />
+                 {jobsToDisplay.map((job) => (
+                  <JobCard key={job.id} job={job} />
+                ))} 
               </>
-            )}
+            )} 
+            <Pagination
+              totalPages={paginationLogic.totalPages}
+              page={paginationLogic.currentPage}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </section>
