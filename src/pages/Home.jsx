@@ -52,7 +52,7 @@ function Home(props) {
       <section className="c-featured-jobs | | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between gap-x-6">
           {recentFearturedJobs.map((recentFearturedJob) => (
-            <JobCard key={recentFearturedJob.id} job={recentFearturedJob} />
+            <JobCard key={recentFearturedJob.id} job={recentFearturedJob} utilityClasses={""}/>
           ))}
         </div>
       </section>
