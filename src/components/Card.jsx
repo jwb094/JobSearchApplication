@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router";
 
 function Card(props) {
   return (
-    <a
-      href={props.content.url}
+    <Link
+      to={props.content.url}
       className="text-slate-800 font-semibold text-sm hover:underline flex items-center"
     >
       <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg  p-6 w-full md:w-96">
@@ -31,7 +32,7 @@ function Card(props) {
         </svg>
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
 
