@@ -145,12 +145,11 @@ function SearchPage(props) {
               </>
             ) : jobsToDisplay.length === 0 ? (
               <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-4 text-center">
-                <h2>No articles matched your search.</h2>
+                <h2>No Jobs matched your search criteria</h2>
                 <p> Try:</p>
                 <ul>
                   <li>another keyword</li>
-                  <li>another category</li>
-                  <li>removing filters</li>
+                  <li>Apply different filters</li>
                 </ul>
               </div>
             ) : (
