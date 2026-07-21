@@ -8,9 +8,16 @@ import {
 } from "../data/Page_content/about";
 import TestmonialCard from "../components/TestmonialCard";
 import { testmonials } from "../data/Page_content/testmonials";
+import MetaTags from "../components/MetaTags";
+import { seoData_about_us } from "../data/Page_seo/seo_data";
 function About(props) {
   return (
     <>
+      <MetaTags
+        title={seoData_about_us.title}
+        description={seoData_about_us.description}
+        name={seoData_about_us.twitterName}
+      />
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
         <Content
           title={AboutUs.title}

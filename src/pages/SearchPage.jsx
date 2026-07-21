@@ -21,8 +21,11 @@ import {
   filterJobs,
 } from "../utils/dataset_functions";
 
+import MetaTags from "../components/MetaTags";
+
 import { useFilterContext } from "../context/Filters";
 import { useJobContext } from "../context/Jobs";
+import { seoData_search_jobs } from "../data/Page_seo/seo_data";
 function SearchPage(props) {
   const { appliedJobs } = useJobContext();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -30,9 +33,9 @@ function SearchPage(props) {
   const [sort, setSort] = useState("");
   const [loading, setLoading] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  //const [paginationData, setPaginationData] = useState(getJobDescsRandomise);
   const paginationData = getJobDescsRandomise;
   const [searchContentData, setSearchContent] = useState([]);
+   
 
   const [page, setPage] = useState(1);
   const [isPending, startTransition] = useTransition();
@@ -41,8 +44,7 @@ function SearchPage(props) {
   const [searchFiltersParams, setSearchFiltersParams] = useState("");
   const [filters_search_params, setFilterSearchParams] =
     useState(filterSearchParams);
-  // console.log(updateFiltersParams(filters));
-  // const fsp = updateFiltersParams(filters);
+
   useEffect(() => {
     //If redirect from home page
     const query = searchParams.get("query") || "";
@@ -118,6 +120,11 @@ function SearchPage(props) {
   console.log(appliedJobs);
   return (
     <>
+          <MetaTags
+        title={seoData_search_jobs.title}
+        description={seoData_search_jobs.description}
+        name={seoData_search_jobs.twitterName}
+      />
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl | text-center">
         <h2 className="text-3xl">Search</h2>
         <p>

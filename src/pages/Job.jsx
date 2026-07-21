@@ -17,6 +17,8 @@ import {
 import PageNotFound from "./PageNotFound";
 import { Link, useParams } from "react-router";
 import { useJobContext } from "../context/Jobs";
+import { seoData_job_description } from "../data/Page_seo/seo_data";
+import MetaTags from "../components/MetaTags";
 function Job(props) {
   const { appliedJobs, isJobApplied, addJobToAppliedCollection } =
     useJobContext();
@@ -26,7 +28,6 @@ function Job(props) {
   const job = getJobDescByID(job_id);
   const jobSlug = checkJobDescriptionSlug(job_slug);
   const relatedJobs = getJobsFromSameCategory(job);
-  console.log(appliedJobs);
     const hasApplied = isJobApplied(job.id)
   if (jobSlug === -1 || !job) {
     return <PageNotFound />;
@@ -49,6 +50,11 @@ function Job(props) {
 
   return (
     <>
+          <MetaTags
+            title={`${job.title} ${seoData_job_description.title}`}
+            description={seoData_job_description.description}
+            name={seoData_job_description.twitterName}
+          />
       <section className="job-description-content">
         <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 lg:py-12  |  max-w-7xl">
           <h2 className="text-3xl">{job.title}</h2>

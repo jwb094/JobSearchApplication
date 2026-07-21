@@ -1,10 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router';
-
+import React from "react";
+import { Link } from "react-router";
+import { seoData_not_found } from "../data/Page_seo/seo_data";
+import MetaTags from "../components/MetaTags";
 function PageNotFound(props) {
-    return (
-        <>
-                  <section>
+  return (
+    <>
+      <MetaTags
+        title={seoData_not_found.title}
+        description={seoData_not_found.description}
+        name={seoData_not_found.twitterName}
+      />
+      <section>
         <div class="flex flex-col items-center justify-center text-sm max-md:px-4 py-60">
           <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
             404 Not Found
@@ -37,8 +43,8 @@ function PageNotFound(props) {
           </Link>
         </div>
       </section>
-        </>
-    );
+    </>
+  );
 }
 
 export default PageNotFound;

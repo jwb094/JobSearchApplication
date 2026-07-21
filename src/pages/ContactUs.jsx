@@ -8,9 +8,16 @@ import {
   InstagramIcon,
 } from "../assets/icons";
 import { socialLinks } from "../data/Page_content/contact_us";
+import MetaTags from "../components/MetaTags";
+import { seoDataContact_us } from "../data/Page_seo/seo_data";
 function ContactUs(props) {
   return (
     <>
+              <MetaTags
+        title={seoDataContact_us.title}
+        description={seoDataContact_us.description}
+        name={seoDataContact_us.twitterName}
+      />
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl">
         <h2 className="text-3xl">Contact Us</h2>
 

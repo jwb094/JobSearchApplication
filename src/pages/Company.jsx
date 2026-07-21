@@ -21,6 +21,8 @@ import { useFilterContext } from "../context/Filters";
 import SortDropdown from "../components/SortDropdown";
 import Pagination from "../components/Pagination";
 import JobCard from "../components/JobCard";
+import MetaTags from "../components/MetaTags";
+import { seoData_company } from "../data/Page_seo/seo_data";
 function Company(props) {
   const { company_id, company_slug } = useParams();
   const { filters, updateFiltersParams, filterSearchParams } =
@@ -77,10 +79,14 @@ function Company(props) {
     const url = updateURL(value, sort);
     window.history.pushState({}, "", url);
   }
-
-  console.log(filters);
   return (
     <>
+
+              <MetaTags
+        title={seoData_search_jobs.title}
+        description={seoData_search_jobs.description}
+        name={seoData_search_jobs.twitterName}
+      />
       <section className="Company-Details">
         <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12  |  max-w-7xl | text-center md:text-start">
           <h1 className="text-3xl">{companyDetails.company_name}</h1>

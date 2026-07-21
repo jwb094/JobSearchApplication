@@ -1,18 +1,5 @@
-export const seoData = {
-  site_name: "JobFinder",
 
-  default: {
-    title: "JobFinder - Find Your Next Job Opportunity",
-    description:
-      "JobFinder helps job seekers discover the latest job opportunities across multiple industries. Search jobs, explore companies, and apply for your next career opportunity.",
-    twitterName: "@JobFinderUK",
-    og_image: "/images/og-image.jpg"
-  },
-
-
-  pages: {
-
-    home: {
+   export const seoData_home = {
       page_name: "Home Page",
       slug: "/",
 
@@ -39,10 +26,10 @@ export const seoData = {
       canonical: "https://www.jobfinder.co.uk/",
 
       robots: "index, follow"
-    },
+    }
 
 
-    search_jobs: {
+   export const seoData_search_jobs = {
       page_name: "Search Jobs Page",
       slug: "/jobs/search",
 
@@ -68,15 +55,15 @@ export const seoData = {
       canonical: "https://www.jobfinder.co.uk/jobs/search",
 
       robots: "index, follow"
-    },
+    };
 
 
-    job_description: {
+    export const seoData_job_description = {
       page_name: "Job Description Page",
       slug: "/jobs/:slug",
 
       title:
-        "{job_title} - Apply Now | JobFinder",
+        "- Apply Now | JobFinder",
 
       description:
         "View the full job description, responsibilities, required skills, salary details, and application information for this role.",
@@ -97,10 +84,10 @@ export const seoData = {
         "https://www.jobfinder.co.uk/jobs/{slug}",
 
       robots: "index, follow"
-    },
+    }
 
 
-    about_us: {
+   export const seoData_about_us = {
       page_name: "About Us Page",
       slug: "/about",
 
@@ -129,7 +116,7 @@ export const seoData = {
     },
 
 
-    contact_us: {
+   export const seoDataContact_us = {
       page_name: "Contact Us Page",
       slug: "/contact",
 
@@ -157,7 +144,7 @@ export const seoData = {
     },
 
 
-    company: {
+  export const seoData_company= {
       page_name: "Company Page",
       slug: "/companies/:slug",
 
@@ -187,12 +174,12 @@ export const seoData = {
     },
 
 
-    jobs_by_category: {
+   export const seoData_jobs_by_category= {
       page_name: "Jobs By Category / Industry Page",
       slug: "/jobs/category/:category",
 
       title:
-        "{category_name} Jobs - Find Latest {category_name} Vacancies | JobFinder",
+        "Jobs - Find Latest Vacancies | JobFinder",
 
       description:
         "Browse the latest {category_name} jobs and career opportunities. Find vacancies from trusted employers and apply today with JobFinder.",
@@ -217,7 +204,7 @@ export const seoData = {
     },
 
 
-    not_found: {
+   export const seoData_not_found= {
       page_name: "404 Page",
       slug: "/404",
 
@@ -244,5 +231,3 @@ export const seoData = {
       robots:
         "noindex, nofollow"
     }
-  }
-};

@@ -17,6 +17,8 @@ import { useParams } from "react-router";
 import { useFilterContext } from "../context/Filters";
 import Pagination from "../components/Pagination";
 import { useJobContext } from "../context/Jobs";
+import MetaTags from "../components/MetaTags";
+import { seoData_jobs_by_category } from "../data/Page_seo/seo_data";
 function CategoryPage(props) {
     const { appliedJobs, setAppliedJobs, addJobToAppliedCollection } =
       useJobContext();
@@ -74,6 +76,11 @@ function CategoryPage(props) {
   }
   return (
     <>
+              <MetaTags
+        title={seoData_jobs_by_category.title}
+        description={seoData_jobs_by_category.description}
+        name={seoData_jobs_by_category.twitterName}
+      />
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12  |  max-w-7xl | text-center">
         <h2 className="text-3xl">{category.name}</h2>
         <p>{category.description}</p>

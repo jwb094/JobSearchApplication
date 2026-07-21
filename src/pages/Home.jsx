@@ -11,6 +11,8 @@ import {
 } from "../utils/dataset_functions";
 
 import { useJobContext } from "../context/Jobs";
+import { seoData_home } from "../data/Page_seo/seo_data";
+import MetaTags from "../../../RJS-Blog/src/components/MetaTags";
 function Home(props) {
   const { appliedJobs, } =
     useJobContext();
@@ -30,6 +32,11 @@ function Home(props) {
 
   return (
     <>
+              <MetaTags
+                title={seoData_home.title}
+                description={seoData_home.description}
+                name={seoData_home.twitterName}
+              />
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl | text-center">
         <h2 className="text-3xl">Find Your Next Job Here</h2>
         <p>
