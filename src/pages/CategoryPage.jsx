@@ -19,7 +19,7 @@ import Pagination from "../components/Pagination";
 function CategoryPage(props) {
   const { category_slug } = useParams();
   const { filters } = useFilterContext();
-  const paginationData =  getJobsByCatgeory(category_slug);
+  const paginationData = getJobsByCatgeory(category_slug);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("");
   const limit = 9;
@@ -31,40 +31,34 @@ function CategoryPage(props) {
     return <PageNotFound />;
   }
 
-    const jobsSortedAndFiltered =
-        useMemo(() =>{
-        return sortJobs(
-          filterJobs(paginationData,filters)
-          ,sort);
-    },[filters,sort])
-  
-     const paginationLogic = useMemo(() => contentPagination(page, limit, jobsSortedAndFiltered),
-     [jobsSortedAndFiltered,page]);
-  
-   const jobsToDisplay = useMemo(() => jobsSortedAndFiltered.slice((page - 1) * limit, page * limit))
+  const jobsSortedAndFiltered = useMemo(() => {
+    return sortJobs(filterJobs(paginationData, filters), sort);
+  }, [filters, sort]);
 
-  // const jobsToDisplay = useMemo(
-  //   () => getJobs(page, limit, paginationData, sort, filters),
-  //   [page, paginationData, sort, filters],
-  // );
+  const paginationLogic = useMemo(
+    () => contentPagination(page, limit, jobsSortedAndFiltered),
+    [jobsSortedAndFiltered, page],
+  );
 
-  // const dataForPagination = contentPagination(page, limit, paginationData);
+  const jobsToDisplay = useMemo(() =>
+    jobsSortedAndFiltered.slice((page - 1) * limit, page * limit),
+  );
+
 
   const sortList = (event) => {
     const value = event.target.value;
     setSort(value);
-      const url = updateURL(page, value );
-  window.history.pushState({}, "", url);
+    const url = updateURL(page, value);
+    window.history.pushState({}, "", url);
   };
 
   function handlePageChange(value) {
     setPage(value);
-       const url = updateURL( value, sort);
-       //const url = updateURL();   
-   window.history.pushState({}, "", url);
+    const url = updateURL(value, sort);
+    window.history.pushState({}, "", url);
   }
 
-    function updateURL(pageNo, sortOrder) {
+  function updateURL(pageNo, sortOrder) {
     let searchURL = "";
 
     searchURL = searchURL.concat("?pageNumber=" + pageNo);
@@ -72,10 +66,8 @@ function CategoryPage(props) {
     if (sortOrder.trim() !== "") {
       searchURL = searchURL.concat("?sort=" + sortOrder);
     }
-    
 
-
-     return searchURL;
+    return searchURL;
   }
   return (
     <>
@@ -91,7 +83,7 @@ function CategoryPage(props) {
         <div className="flex flex-col md:flex-row justify-between gap-x-6 ">
           {/* {popular} */}
           {featuredJobs.map((job) => (
-            <JobCard job={job}  utilityClasses={"h-72 justify-around"}/>
+            <JobCard job={job} utilityClasses={"h-72 justify-around"} />
           ))}
         </div>
       </section>
@@ -106,18 +98,18 @@ function CategoryPage(props) {
             <SortDropdown sortList={sortList} />
             {jobsToDisplay.length === 0 ? (
               <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-4 text-center">
-                <h2>No articles matched your search.</h2>
+                <h2>No Jobs matched your search criteria</h2>
+
                 <p> Try:</p>
                 <ul>
                   <li>another keyword</li>
-                  <li>another category</li>
-                  <li>removing filters</li>
+                  <li>Apply different filters</li>
                 </ul>
               </div>
             ) : (
               <>
                 {jobsToDisplay.map((job) => (
-                  <JobCard key={job.id} job={job} utilityClasses={""}/>
+                  <JobCard key={job.id} job={job} utilityClasses={""} />
                 ))}
               </>
             )}
