@@ -6,8 +6,14 @@ import {
   LocationIcon,
   SalaryIcon,
 } from "../assets/icons";
+import { useJobContext } from "../context/Jobs";
 function JobCard(props) {
+ const { appliedJobs, isJobApplied, addJobToAppliedCollection } =
+    useJobContext();
+   
 
+  const hasApplied = isJobApplied(props.job.id)
+ console.log(hasApplied);
   return (
     <section
       data-template="JobCard"
@@ -35,7 +41,7 @@ function JobCard(props) {
             <SalaryIcon width={24} height={24} /> {props.job.salary_min} -{" "}
             {props.job.salary_max}
           </p>
-          <Button link={props.job.url} title={"View Job"} />
+          <Button link={props.job.url} title={"View Job"}  hasApplied={hasApplied}/>
         {/* </div> */}
       </div>
     </section>
