@@ -30,7 +30,7 @@ function Job(props) {
         <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 lg:py-12  |  max-w-7xl">
           <h2 className="text-3xl">{job.title}</h2>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
-            <CompanyIcon width={24} height={24} /> {job.company_name}
+            <CompanyIcon width={24} height={24} /> <a href={`/company/${job.companyDetails.id}/${job.companyDetails.slug}`}>{job.company_name}</a>
           </p>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
             <JobTypeIcon width={24} height={24} /> {job.jobType}
