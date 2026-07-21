@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SummaryCard from "../components/SummaryCard";
 import Button from "../components/Button";
 import {
@@ -13,10 +13,12 @@ import {
   getJobDescByID,
   getJobsFromSameCategory,
 } from "../utils/dataset_functions";
+import Modal from "../components/Modal";
 import PageNotFound from "./PageNotFound";
 import { useParams } from "react-router";
 function Job(props) {
-  const { job_id,job_slug } = useParams();
+  const { job_id, job_slug } = useParams();
+  const [resultmessage, setResultMessage] = useState();
   const job = getJobDescByID(job_id);
   const jobSlug = checkJobDescriptionSlug(job_slug);
   const relatedJobs = getJobsFromSameCategory(job);
@@ -24,13 +26,29 @@ function Job(props) {
   if (jobSlug === -1 || !job) {
     return <PageNotFound />;
   }
+
+  function appliedForJob(event) {
+      if (confirm(`Confirm you're applying for the role of ${job.title}`)) {
+        setResultMessage("Applied");
+      } else {
+        setResultMessage("");
+      }
+
+
+  }
+
   return (
     <>
       <section className="job-description-content">
         <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 lg:py-12  |  max-w-7xl">
           <h2 className="text-3xl">{job.title}</h2>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
-            <CompanyIcon width={24} height={24} /> <a href={`/company/${job.companyDetails.id}/${job.companyDetails.slug}`}>{job.company_name}</a>
+            <CompanyIcon width={24} height={24} />{" "}
+            <a
+              href={`/company/${job.companyDetails.id}/${job.companyDetails.slug}`}
+            >
+              {job.company_name}
+            </a>
           </p>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
             <JobTypeIcon width={24} height={24} /> {job.jobType}
@@ -83,10 +101,16 @@ function Job(props) {
 
           <SummaryCard
             title={"Additional Information"}
-            content={job.additional_info}
-          />
+            content={job.additional_info}          />
+          <button 
+          disabled={resultmessage === "Applied"}
+          onClick={appliedForJob}
+            className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+            type="button"
+          >
+            {resultmessage === "Applied" ? resultmessage : " Apply"}
+          </button>
 
-          <Button title={"Apply"} />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-12">
