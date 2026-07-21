@@ -7,14 +7,17 @@ import {
   SalaryIcon,
 } from "../assets/icons";
 function JobCard(props) {
+
   return (
     <section
       data-template="JobCard"
       data-view="default"
       className="c-job-card w-full"
     >
-      <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full">
-        <div className="p-4 flex flex-col gap-y-3">
+      <div 
+      className={ props.utilityClasses ? `${props.utilityClasses} relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full p-4 flex flex-col gap-y-3` 
+      : "relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full p-4 flex flex-col gap-y-3"}
+      >
           <h5 className="mb-2 text-slate-800 text-xl font-semibold">
             {props.job.title}
           </h5>
@@ -33,7 +36,7 @@ function JobCard(props) {
             {props.job.salary_max}
           </p>
           <Button link={props.job.url} title={"View Job"} />
-        </div>
+        {/* </div> */}
       </div>
     </section>
   );
