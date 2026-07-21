@@ -16,7 +16,10 @@ import {
 import { useParams } from "react-router";
 import { useFilterContext } from "../context/Filters";
 import Pagination from "../components/Pagination";
+import { useJobContext } from "../context/Jobs";
 function CategoryPage(props) {
+    const { appliedJobs, setAppliedJobs, addJobToAppliedCollection } =
+      useJobContext();
   const { category_slug } = useParams();
   const { filters } = useFilterContext();
   const paginationData = getJobsByCatgeory(category_slug);
