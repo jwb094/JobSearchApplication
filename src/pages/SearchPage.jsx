@@ -22,7 +22,9 @@ import {
 } from "../utils/dataset_functions";
 
 import { useFilterContext } from "../context/Filters";
+import { useJobContext } from "../context/Jobs";
 function SearchPage(props) {
+  const { appliedJobs } = useJobContext();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [sort, setSort] = useState("");
@@ -113,7 +115,7 @@ function SearchPage(props) {
     const url = updateURL(searchTerm, value, sort);
     window.history.pushState({}, "", url);
   }
-
+  console.log(appliedJobs);
   return (
     <>
       <div className="flex flex-col gap-y-6 | mx-auto px-4 py-16 sm:px-6 lg:px-12 |  max-w-7xl | text-center">

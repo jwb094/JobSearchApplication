@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SummaryCard from "../components/SummaryCard";
 import Button from "../components/Button";
 import {
@@ -13,28 +13,38 @@ import {
   getJobDescByID,
   getJobsFromSameCategory,
 } from "../utils/dataset_functions";
-import Modal from "../components/Modal";
+
 import PageNotFound from "./PageNotFound";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
+import { useJobContext } from "../context/Jobs";
 function Job(props) {
+  const { appliedJobs, isJobApplied, addJobToAppliedCollection } =
+    useJobContext();
+
   const { job_id, job_slug } = useParams();
   const [resultmessage, setResultMessage] = useState();
   const job = getJobDescByID(job_id);
   const jobSlug = checkJobDescriptionSlug(job_slug);
   const relatedJobs = getJobsFromSameCategory(job);
-
+  console.log(appliedJobs);
+    const hasApplied = isJobApplied(job.id)
   if (jobSlug === -1 || !job) {
     return <PageNotFound />;
   }
+  useEffect(() => {
+    isJobApplied(Number(job_id))
+      ? setResultMessage("Applied")
+      : setResultMessage("");
+  }, []);
 
   function appliedForJob(event) {
-      if (confirm(`Confirm you're applying for the role of ${job.title}`)) {
-        setResultMessage("Applied");
-      } else {
-        setResultMessage("");
-      }
-
-
+    if (confirm(`Confirm you're applying for the role of ${job.title}`)) {
+      setResultMessage("Applied");
+      // isJobAmongstApplied(job.id)
+      addJobToAppliedCollection(job.id);
+    } else {
+      setResultMessage("");
+    }
   }
 
   return (
@@ -44,11 +54,11 @@ function Job(props) {
           <h2 className="text-3xl">{job.title}</h2>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
             <CompanyIcon width={24} height={24} />{" "}
-            <a
-              href={`/company/${job.companyDetails.id}/${job.companyDetails.slug}`}
+            <Link
+              to={`/company/${job.companyDetails.id}/${job.companyDetails.slug}`}
             >
               {job.company_name}
-            </a>
+            </Link>
           </p>
           <p className="text-slate-600 leading-normal font-light flex  gap-x-5">
             <JobTypeIcon width={24} height={24} /> {job.jobType}
@@ -101,16 +111,17 @@ function Job(props) {
 
           <SummaryCard
             title={"Additional Information"}
-            content={job.additional_info}          />
-          <button 
-          disabled={resultmessage === "Applied"}
-          onClick={appliedForJob}
+            content={job.additional_info}
+          />
+          <button
+            // disabled={resultmessage === "Applied"}
+            disabled={hasApplied}
+            onClick={appliedForJob}
             className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
             type="button"
           >
-            {resultmessage === "Applied" ? resultmessage : " Apply"}
+            {hasApplied ? "Applied" : " Apply"}
           </button>
-
         </div>
 
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-12">
