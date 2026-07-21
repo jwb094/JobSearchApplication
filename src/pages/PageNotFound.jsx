@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 function PageNotFound(props) {
     return (
@@ -12,7 +13,7 @@ function PageNotFound(props) {
           <p class="md:text-xl text-gray-400 max-w-lg text-center">
             The page you are looking for does not exist or has been moved.
           </p>
-          <a
+          <Link
             href="/"
             class="group flex items-center gap-1 bg-white hover:bg-gray-200 px-7 py-2.5 text-gray-800 rounded-full mt-10 font-medium active:scale-95 transition-all"
           >
@@ -33,7 +34,7 @@ function PageNotFound(props) {
                 stroke-linejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </section>
         </>
