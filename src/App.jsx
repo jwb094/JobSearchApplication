@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage";
 import PageNotFound from "./pages/PageNotFound";
 import About from "./pages/About";
 import CategoryPage from "./pages/CategoryPage";
+import Company from "./pages/Company";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/job/category/:category_slug" element={<CategoryPage />} />
           <Route path="/job/:job_id/:job_slug" element={<Job />} />
+          <Route path="/company/:company_id/:company_slug" element={<Company />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<PageNotFound />} />
