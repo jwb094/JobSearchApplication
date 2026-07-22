@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import { HambugerIcon } from "../assets/icons";
 
 function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <header>
-        <nav className="bg-gray-400 shadow-md px-4 py-3">
+        <nav className="bg-stone-200 shadow-md px-4 py-3">
           <div className="flex justify-between items-center">
             {/* Brand */}
             <div className="font-bold text-xl">
-              {/* <a href="/">JobFinder</a> */}
        
-                <Link to="/">JobFinder</Link>
+                <Link to="/">Job Seekers</Link>
           
             </div>
 
@@ -21,7 +21,7 @@ function Header(props) {
               className="md:hidden text-2xl"
               onClick={() => setIsOpen(!isOpen)}
             >
-              ☰
+             <HambugerIcon width={24} height={24}/> 
             </button>
 
             {/* Menu */}
