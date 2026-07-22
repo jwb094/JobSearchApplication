@@ -1,87 +1,85 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router";
 
-function Footer(props) {
-    return (
-       <footer className="bg-white border-t border-gray-100">
-                <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+function Footer() {
+  return (
+    <footer className="bg-stone-200 border-t border-gray-100">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
-                    {/*Top Grid*/}
-                    <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {/* Top Grid */}
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
 
-                        {/* Blog */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-gray-900">StorySphere</h3>
-                            <ul className="mt-4 space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Latest Posts</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Categories</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Popular Articles</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Archive</a></li>
-                            </ul>
-                        </div>
+          {/* Job Seekers */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Job Seekers
+            </h3>
 
-                        {/* Company */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-gray-900">Company</h3>
-                            <ul className="mt-4 space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">About</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Contact</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Careers</a></li>
-                            </ul>
-                        </div>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Search Jobs</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Browse Categories</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Browse Companies</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Saved Jobs</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Applied Jobs</Link></li>
+            </ul>
+          </div>
 
-                        {/* Resources */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-gray-900">Resources</h3>
-                            <ul className="mt-4 space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Writing Guide</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">SEO Tips</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog Tools</a></li>
-                            </ul>
-                        </div>
+          {/* Employers */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Employers
+            </h3>
 
-                        {/* Legal */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-gray-900">Legal</h3>
-                            <ul className="mt-4 space-y-3 text-sm">
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
-                                <li><a href="#" className="text-gray-600 hover:text-gray-900">Cookies</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Post a Job</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Employer Dashboard</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Pricing</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Recruitment Solutions</Link></li>
+            </ul>
+          </div>
 
-                    {/* Bottom */}
-                    <div className="mt-10 border-t border-gray-100 pt-6 flex flex-col md:flex-row md:justify-between md:items-center">
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Company
+            </h3>
 
-                        <p className="text-xs text-gray-500">
-                            © 2026 Blog App. All rights reserved.
-                        </p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">About Us</Link></li>
+              <li><Link to="#"className="text-gray-600 hover:text-gray-900">Contact Us</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Careers</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">FAQs</Link></li>
+            </ul>
+          </div>
 
-                        {/* Socials */}
-                        <div className="mt-4 md:mt-0 flex space-x-4">
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">
+              Legal
+            </h3>
 
-                            {/* Twitter */}
-                            <a href="#" className="text-gray-500 hover:text-gray-900">
-                                <span className="sr-only">Twitter</span>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li><Link to="#"className="text-gray-600 hover:text-gray-900">Privacy Policy</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Terms & Conditions</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Cookie Policy</Link></li>
+              <li><Link to="#" className="text-gray-600 hover:text-gray-900">Accessibility</Link></li>
+            </ul>
+          </div>
 
-                            </a>
+        </div>
 
-                            {/* GitHub */}
-                            <a href="#" className="text-gray-500 hover:text-gray-900">
-                                <span className="sr-only">GitHub</span>
-                            </a>
+        {/* Bottom */}
+        <div className="mt-10 border-t border-gray-100 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
 
-                            {/* Instagram */}
-                            <a href="#" className="text-gray-500 hover:text-gray-900">
-                                <span className="sr-only">Instagram</span>
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} Job Seekers. All rights reserved.
+          </p>
 
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </footer>
-    );
+      
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
