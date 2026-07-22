@@ -17,16 +17,16 @@ function TestmonialCard({review}) {
       data-view="default"
       className="c-testmonial-card"
     >
-      <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full">
-        <div className="p-4">
-          <h5 className="mb-2 text-slate-800 text-xl font-semibold">
+      <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full md:h-72">
+        <div className="h-full p-4 flex flex-col justify-between">
+          <p className="mb-2 text-slate-800 text-md font-semibold">
             {review.description}
-          </h5>
-          <small className="flex flex-row">{rating}</small>
-          <p className="text-slate-600 leading-normal font-light">
-          {review.name}
           </p>
-          <p className="text-slate-600 leading-normal font-light">
+          <small className="flex flex-row gap-x-2">{rating}</small>
+          <h5 className="text-slate-600 leading-normal font-light text-xl">
+          {review.name}
+          </h5>
+          <p className="text-slate-600 leading-normal font-light text-lg">
              {review.role}
           </p>
         </div>
