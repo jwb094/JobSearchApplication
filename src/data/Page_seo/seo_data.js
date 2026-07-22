@@ -1,5 +1,4 @@
-
-   export const seoData_home = {
+export const seoData_home = {
       page_name: "Home Page",
       slug: "/",
 
@@ -26,7 +25,7 @@
       canonical: "https://www.jobfinder.co.uk/",
 
       robots: "index, follow"
-    }
+    };
 
 
    export const seoData_search_jobs = {
@@ -84,7 +83,7 @@
         "https://www.jobfinder.co.uk/jobs/{slug}",
 
       robots: "index, follow"
-    }
+    };
 
 
    export const seoData_about_us = {
@@ -113,7 +112,7 @@
         "https://www.jobfinder.co.uk/about",
 
       robots: "index, follow"
-    },
+    };
 
 
    export const seoDataContact_us = {
@@ -141,15 +140,15 @@
         "https://www.jobfinder.co.uk/contact",
 
       robots: "index, follow"
-    },
+    };
 
 
-  export const seoData_company= {
+  export const seoData_company = {
       page_name: "Company Page",
       slug: "/companies/:slug",
 
       title:
-        "{company_name} Jobs and Careers | JobFinder",
+        "Jobs and Careers | JobFinder",
 
       description:
         "Explore {company_name} company profile, available jobs, workplace information, and career opportunities on JobFinder.",
@@ -171,10 +170,10 @@
         "https://www.jobfinder.co.uk/companies/{slug}",
 
       robots: "index, follow"
-    },
+    };
 
 
-   export const seoData_jobs_by_category= {
+   export const seoData_jobs_by_category = {
       page_name: "Jobs By Category / Industry Page",
       slug: "/jobs/category/:category",
 
@@ -201,10 +200,10 @@
         "https://www.jobfinder.co.uk/jobs/category/{category}",
 
       robots: "index, follow"
-    },
+    };
 
 
-   export const seoData_not_found= {
+   export const seoData_not_found = {
       page_name: "404 Page",
       slug: "/404",
 
@@ -230,4 +229,4 @@
 
       robots:
         "noindex, nofollow"
-    }
+    };
